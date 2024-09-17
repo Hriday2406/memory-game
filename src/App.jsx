@@ -1,7 +1,7 @@
 import "./App.css";
 import Info from "./info";
 import { useState } from "react";
-import Home from "./home";
+import { LvlSelector } from "./levels";
 
 function App() {
   const [level, setLevel] = useState(0);
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <main className="relative w-screen h-screen text-white bg-black page font-body">
-        <Home level={level} setLevel={setLevel} />
+        <LvlSelector level={level} setLevel={setLevel} />
         <Info />
       </main>
     </>

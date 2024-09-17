@@ -46,7 +46,7 @@ function LvlBtnSelector({ level, setLevel }) {
       <Button
         className="p-6 border-2 border-white btn font-body hover:text-black"
         onClick={() => {
-          setLevel({ level });
+          setLevel(level);
         }}
       >
         {lvlName}
@@ -58,9 +58,9 @@ function LvlBtnSelector({ level, setLevel }) {
 export default function Home({ level, setLevel }) {
   return (
     <>
-      <div className="top">
+      <div>
         <div
-          className="flex flex-col items-center justify-center gap-4 text-5xl logo font-display py-36"
+          className="flex flex-col items-center justify-center gap-4 text-5xl select-none font-display py-36"
           onClick={() => {
             setLevel(0);
           }}
