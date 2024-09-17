@@ -1,8 +1,7 @@
-# React + Vite
+# Anime Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-   This is Memory game where you have to click on a card only once,
+    i.e. don't click on the same card twice.
 
-Currently, two official plugins are available:
+-   There are 3 hardness levels, Easy, Medium and Hard. **_Can you beat them all ?_**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
