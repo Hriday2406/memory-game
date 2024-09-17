@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Home from "./home";
 import ScoreCard from "./scoreCard";
 
-function LvlSelector({ level, setLevel }) {
+export default function Levels() {
+  const [level, setLevel] = useState(0);
   if (level == 0) return <Home level={level} setLevel={setLevel} />;
   if (level == 1) return <Level1 setLevel={setLevel} />;
   if (level == 2) return <Level2 setLevel={setLevel} />;
@@ -47,5 +49,3 @@ function Level3({ setLevel }) {
     </>
   );
 }
-
-export { LvlSelector };
