@@ -6,7 +6,17 @@ import Level1 from "./level1";
 function Levels() {
   const [level, setLevel] = useState(0);
   const [best1Score, setBest1Score] = useState(0);
-  if (level == 0) return <Home setLevel={setLevel} />;
+  const [best2Score, setBest2Score] = useState(0);
+  const [best3Score, setBest3Score] = useState(0);
+  if (level == 0)
+    return (
+      <Home
+        setLevel={setLevel}
+        best1Score={best1Score}
+        best2Score={best2Score}
+        best3Score={best3Score}
+      />
+    );
   if (level == 1)
     return (
       <Level1
@@ -15,8 +25,22 @@ function Levels() {
         setBestScore={setBest1Score}
       />
     );
-  if (level == 2) return <Level2 setLevel={setLevel} />;
-  if (level == 3) return <Level3 setLevel={setLevel} />;
+  if (level == 2)
+    return (
+      <Level2
+        setLevel={setLevel}
+        bestScore={best2Score}
+        setBestScore={setBest2Score}
+      />
+    );
+  if (level == 3)
+    return (
+      <Level3
+        setLevel={setLevel}
+        bestScore={best3Score}
+        setBestScore={setBest3Score}
+      />
+    );
 }
 
 function Header({ level, setLevel, currScore, bestScore }) {
