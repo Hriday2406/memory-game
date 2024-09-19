@@ -44,7 +44,7 @@ function LvlBtnSelector({ level, setLevel }) {
       }}
     >
       <Button
-        className="p-6 border-2 border-white btn font-body hover:text-black"
+        className="p-6 border-2 border-white btn font-body "
         onClick={() => {
           setLevel(level);
         }}
@@ -55,7 +55,7 @@ function LvlBtnSelector({ level, setLevel }) {
   );
 }
 
-export default function Home({ level, setLevel }) {
+export default function Home({ setLevel }) {
   return (
     <>
       <div>
