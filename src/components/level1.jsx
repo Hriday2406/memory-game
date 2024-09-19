@@ -20,13 +20,12 @@ function shuffleArray({ arr, setArr }) {
 
 export default function Level1({ setLevel, bestScore, setBestScore }) {
   const [currScore, setCurrScore] = useState(0);
-  // const [bestScore, setBestScore] = useState(0);
   const [arr, setArr] = useState(LVL1ANIME);
 
   const easyCards = arr.map((anime, index) => {
     return (
       <div
-        className="transition-all duration-200 p-5 border-2 border-easy rounded-[32px] flex flex-col items-center gap-5 hover:scale-105 "
+        className="transition-all duration-200 p-5 border-2 border-easy rounded-[32px] flex flex-col items-center gap-5 hover:scale-105 uppercase"
         key={`Lvl 1 ${index}`}
         onClick={() => {
           if (anime.clicked) {
@@ -40,6 +39,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
               alert("you win");
               setCurrScore(0);
               arr.forEach((item) => (item.clicked = false));
+              setLevel(0);
             }
           }
           shuffleArray({ arr, setArr });
