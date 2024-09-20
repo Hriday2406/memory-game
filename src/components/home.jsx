@@ -53,7 +53,7 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-7">
       <ConfigProvider
         theme={{
           components: {
@@ -70,7 +70,10 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
         }}
       >
         <Button
-          className="p-6 border-2 btn font-body justify-self-start "
+          className={`p-6 border-2 shadow-lg btn font-body justify-self-start 
+          ${level == 1 && bestScore == 6 && "shadow-easy hover:shadow-white"} 
+          ${level == 2 && bestScore == 8 && "shadow-med hover:shadow-white"} 
+          ${level == 3 && bestScore == 10 && "shadow-hard hover:shadow-white"}`}
           onClick={() => {
             setLevel(level);
           }}
