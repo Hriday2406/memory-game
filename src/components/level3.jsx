@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LVL3ANIME } from "../utils/constants";
-import { Card } from "./card";
+import Card from "./card";
 import { shuffleArr } from "../utils/utils";
 import { Header } from "./levels";
 
@@ -44,7 +44,7 @@ export default function Level3({ setLevel, bestScore, setBestScore }) {
         currScore={currScore}
         bestScore={bestScore}
       />
-      <section className="grid grid-cols-5 gap-10  justify-items-center w-fit">
+      <section className="grid grid-cols-5 gap-10 justify-items-center w-fit">
         {hardCards}
       </section>
     </>

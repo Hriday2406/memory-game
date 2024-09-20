@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Header } from "./levels";
 import { LVL2ANIME } from "../utils/constants";
 import { shuffleArr } from "../utils/utils";
-import { Card } from "./card";
+import Card from "./card";
 
 export default function Level2({ setLevel, bestScore, setBestScore }) {
   LVL2ANIME.splice(0, LVL2ANIME.length, ...shuffleArr(LVL2ANIME));

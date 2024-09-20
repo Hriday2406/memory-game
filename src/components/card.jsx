@@ -1,4 +1,4 @@
-function Card({ item, level, onClick }) {
+export default function Card({ item, level, onClick }) {
   let isNameVisible = level == 2;
   return (
     <div
@@ -20,5 +20,3 @@ function Card({ item, level, onClick }) {
     </div>
   );
 }
-
-export { Card };
