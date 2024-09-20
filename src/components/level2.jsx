@@ -1,30 +1,13 @@
 import { useEffect, useState } from "react";
 import { Header } from "./levels";
 import { LVL2ANIME } from "../utils/constants";
-import { shuffleArray } from "../utils/utils";
+import { shuffleStateArr, shuffleArr } from "../utils/utils";
 import { Card } from "./card";
 
 export default function Level2({ setLevel, bestScore, setBestScore }) {
+  LVL2ANIME.splice(0, LVL2ANIME.length, ...shuffleArr(LVL2ANIME));
   const [currScore, setCurrScore] = useState(0);
   const [arr, setArr] = useState(LVL2ANIME);
-
-  useEffect(() => {
-    shuffleArray({ arr, setArr });
-    let newArr = [...arr];
-    newArr.forEach((item) => {
-      async function getGif() {
-        const response = await fetch(
-          `https://api.giphy.com/v1/gifs/translate?api_key=SA5LeTVtgRiIdurzTOcS6qePLhr0gIxO&s=${item.name}`,
-          { mode: "cors" }
-        );
-        const gif = await response.json();
-        item.url = gif.data.images.original.url;
-      }
-      // Comment this function below to stop calling the API
-      // getGif();
-    });
-    setArr(newArr);
-  }, []);
 
   const medCards = arr.map((anime, index) => {
     return (
@@ -47,7 +30,7 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
               setLevel(0);
             }
           }
-          shuffleArray({ arr, setArr });
+          shuffleStateArr(arr, setArr);
         }}
       />
     );
@@ -61,10 +44,7 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
         currScore={currScore}
         bestScore={bestScore}
       />
-      <section
-        className="container grid grid-cols-4 gap-10 justify-items-center w-fit "
-        // onLoad={() => shuffleArray({ arr, setArr })}
-      >
+      <section className="container grid grid-cols-4 gap-10 justify-items-center w-fit ">
         {medCards}
       </section>
     </>
