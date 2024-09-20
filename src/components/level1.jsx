@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "./levels";
 import { LVL1ANIME } from "../utils/constants";
-import { shuffleArray } from "../utils/utils";
+import { shuffleStateArr } from "../utils/utils";
 
 export default function Level1({ setLevel, bestScore, setBestScore }) {
   const [currScore, setCurrScore] = useState(0);
@@ -27,7 +27,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
               setLevel(0);
             }
           }
-          shuffleArray({ arr, setArr });
+          shuffleStateArr(arr, setArr);
         }}
       >
         <div className="overflow-hidden transition-all duration-200 select-none rounded-xl group-hover:scale-90">

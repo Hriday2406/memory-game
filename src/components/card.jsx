@@ -8,7 +8,11 @@ function Card({ item, level, onClick }) {
       onClick={onClick}
     >
       <div className="w-64 h-64 overflow-hidden transition-all duration-200 select-none rounded-xl group-hover:scale-90">
-        <img src={item.url} alt={item.alias} className="h-64" />
+        <img
+          src={item.url[Math.floor(Math.random() * 25)]}
+          alt={item.alias}
+          className="h-64"
+        />
       </div>
       <h2 className={`${!isNameVisible && "hidden"}`}>{item.name}</h2>
     </div>
