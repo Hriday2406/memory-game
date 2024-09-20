@@ -10,7 +10,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
   const easyCards = arr.map((anime, index) => {
     return (
       <div
-        className="transition-all duration-200 p-5 border-2 border-easy rounded-[32px] flex flex-col items-center gap-5 hover:scale-105 uppercase"
+        className="transition-all duration-200 p-5 border-2 border-easy rounded-[32px] flex flex-col items-center gap-5 hover:scale-105 uppercase group"
         key={`Lvl 1 ${index}`}
         onClick={() => {
           if (anime.clicked) {
@@ -30,7 +30,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
           shuffleArray({ arr, setArr });
         }}
       >
-        <div className="overflow-hidden select-none rounded-xl">
+        <div className="overflow-hidden transition-all duration-200 select-none rounded-xl group-hover:scale-90">
           <img src={anime.src} alt={anime.alias} className="h-64 " />
         </div>
         <h2>{anime.name}</h2>
