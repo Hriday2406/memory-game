@@ -3,6 +3,7 @@ import Home from "./home";
 import ScoreCard from "./scoreCard";
 import Level1 from "./level1";
 import Level2 from "./level2";
+import Level3 from "./level3";
 
 function Levels() {
   const [level, setLevel] = useState(0);
@@ -57,22 +58,6 @@ function Header({ level, setLevel, currScore, bestScore }) {
       </div>
       <ScoreCard level={level} currScore={currScore} bestScore={bestScore} />
     </div>
-  );
-}
-
-function Level3({ setLevel }) {
-  const [currScore, setCurrScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
-  return (
-    <>
-      <Header
-        level={3}
-        setLevel={setLevel}
-        currScore={currScore}
-        bestScore={bestScore}
-      />
-      3
-    </>
   );
 }
 
