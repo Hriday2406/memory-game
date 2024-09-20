@@ -12,15 +12,23 @@ function App() {
       if (item.name == "One Piece") itemName = "One Piece Anime";
       if (item.name == "Attack on Titan") itemName = "Attack on Titan Anime";
       async function getGif() {
-        const response = await fetch(
-          `https://api.giphy.com/v1/gifs/search?api_key=lBrsd0g5fB5uXIMcDspDfrGNduov7EH4&q=${itemName}&limit=25`,
-          { mode: "cors" }
-        );
-        const gif = await response.json();
-        const gifs = gif.data;
-        gifs.forEach((gifItem) => {
-          item.url.push(gifItem.images.original.url);
-        });
+        try {
+          const response = await fetch(
+            `https://api.giphy.com/v1/gifs/search?api_key=lBrsd0g5fB5uXIMcDspDfrGNduov7EH4&q=${itemName}&limit=25`,
+            { mode: "cors" }
+          );
+          const gif = await response.json();
+          if (gif.meta.status == 200) {
+            const gifs = gif.data;
+            gifs.forEach((gifItem) => {
+              item.url.push(gifItem.images.original.url);
+            });
+          } else {
+            console.log(gif.meta.status, gif.meta.msg);
+          }
+        } catch (error) {
+          throw new Error(error);
+        }
       }
       // Comment this function below to stop calling the API
       getGif();
