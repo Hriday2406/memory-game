@@ -36,3 +36,54 @@ export const LVL1ANIME = [
     clicked: false,
   },
 ];
+
+export const LVL2ANIME = [
+  {
+    name: "Jujutsu Kaisen",
+    alias: "jjk",
+    url: "",
+    clicked: false,
+  },
+  {
+    name: "Attack on Titan",
+    alias: "aot",
+    url: "",
+    clicked: false,
+  },
+  {
+    name: "Dragon Ball Z",
+    alias: "dbz",
+    url: "",
+    clicked: false,
+  },
+  {
+    name: "Demon Slayer",
+    alias: "demon",
+    url: "",
+    clicked: false,
+  },
+  {
+    name: "Naruto",
+    alias: "naruto",
+    url: "",
+    clicked: false,
+  },
+  {
+    name: "One Piece",
+    alias: "one",
+    url: "",
+    clicked: false,
+  },
+  {
+    name: "Haikyuu",
+    alias: "HaiQ",
+    url: "",
+    clicked: false,
+  },
+  {
+    name: "My Hero Academia",
+    alias: "MHA",
+    url: "",
+    clicked: false,
+  },
+];

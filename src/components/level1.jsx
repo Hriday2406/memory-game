@@ -1,22 +1,7 @@
 import { useState } from "react";
 import { Header } from "./levels";
 import { LVL1ANIME } from "../utils/constants";
-
-function shuffleArray({ arr, setArr }) {
-  let newArr = [...arr];
-  let currentIndex = newArr.length;
-
-  while (currentIndex != 0) {
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [newArr[currentIndex], newArr[randomIndex]] = [
-      newArr[randomIndex],
-      newArr[currentIndex],
-    ];
-  }
-  setArr(newArr);
-}
+import { shuffleArray } from "../utils/utils";
 
 export default function Level1({ setLevel, bestScore, setBestScore }) {
   const [currScore, setCurrScore] = useState(0);

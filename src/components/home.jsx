@@ -1,7 +1,7 @@
 import { Button, ConfigProvider } from "antd";
 
 function LvlBtnSelector({ level, setLevel, bestScore }) {
-  let lvlName, btnStyles;
+  let lvlName, btnStyles, winBtnStyles;
   if (level == 1) {
     lvlName = "Easy";
     btnStyles = {
@@ -11,9 +11,11 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
       defaultActiveBorderColor: "#0af",
     };
     if (bestScore == 6) {
-      btnStyles = {
+      winBtnStyles = {
         defaultColor: "#0af",
         defaultBorderColor: "#0af",
+        defaultHoverColor: "#fff",
+        defaultHoverBorderColor: "#fff",
       };
     }
   } else if (level == 2) {
@@ -25,9 +27,11 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
       defaultActiveBorderColor: "#0f0",
     };
     if (bestScore == 8) {
-      btnStyles = {
+      winBtnStyles = {
         defaultColor: "#0f0",
         defaultBorderColor: "#0f0",
+        defaultHoverColor: "#fff",
+        defaultHoverBorderColor: "#fff",
       };
     }
   } else if (level == 3) {
@@ -39,9 +43,11 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
       defaultActiveBorderColor: "#f00",
     };
     if (bestScore == 10) {
-      btnStyles = {
+      winBtnStyles = {
         defaultColor: "#f00",
         defaultBorderColor: "#f00",
+        defaultHoverColor: "#fff",
+        defaultHoverBorderColor: "#fff",
       };
     }
   }
@@ -58,6 +64,7 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
               defaultHoverBg: "#000",
               defaultActiveBg: "#000",
               ...btnStyles,
+              ...winBtnStyles,
             },
           },
         }}
