@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Header } from "./levels";
 import { LVL2ANIME } from "../utils/constants";
-import { shuffleStateArr, shuffleArr } from "../utils/utils";
+import { shuffleArr } from "../utils/utils";
 import { Card } from "./card";
 
 export default function Level2({ setLevel, bestScore, setBestScore }) {
@@ -30,7 +30,7 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
               setLevel(0);
             }
           }
-          shuffleStateArr(arr, setArr);
+          setArr((prev) => shuffleArr(prev));
         }}
       />
     );
