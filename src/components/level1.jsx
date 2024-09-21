@@ -13,20 +13,22 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
         className="transition-all duration-200 p-5 border-2 border-easy rounded-[32px] flex flex-col items-center gap-5 hover:scale-105 uppercase group hover:shadow-lg hover:shadow-easy backdrop-blur-sm"
         key={`Lvl 1 ${index}`}
         onClick={() => {
+          const tempArr = [...arr];
           if (anime.clicked) {
             setCurrScore(0);
-            arr.forEach((item) => (item.clicked = false));
+            tempArr.forEach((item) => (item.clicked = false));
           } else {
-            anime.clicked = true;
+            tempArr[index].clicked = true;
             setCurrScore(currScore + 1);
             if (bestScore <= currScore) setBestScore(currScore + 1);
             if (currScore + 1 == 6) {
               alert("you win");
               setCurrScore(0);
-              arr.forEach((item) => (item.clicked = false));
+              tempArr.forEach((item) => (item.clicked = false));
               setLevel(0);
             }
           }
+          setArr(tempArr);
           setArr((prev) => shuffleArr(prev));
         }}
       >

@@ -16,20 +16,22 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
         level={2}
         key={`Lvl 2 ${index}`}
         onClick={() => {
+          const tempArr = [...arr];
           if (anime.clicked) {
             setCurrScore(0);
-            arr.forEach((item) => (item.clicked = false));
+            tempArr.forEach((item) => (item.clicked = false));
           } else {
-            anime.clicked = true;
+            tempArr[index].clicked = true;
             setCurrScore(currScore + 1);
             if (bestScore <= currScore) setBestScore(currScore + 1);
             if (currScore + 1 == 8) {
               alert("you win");
               setCurrScore(0);
-              arr.forEach((item) => (item.clicked = false));
+              tempArr.forEach((item) => (item.clicked = false));
               setLevel(0);
             }
           }
+          setArr(tempArr);
           setArr((prev) => shuffleArr(prev));
         }}
       />
