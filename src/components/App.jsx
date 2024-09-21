@@ -43,7 +43,7 @@ function App() {
   }, []);
   return (
     <>
-      <main className="relative flex flex-col items-center w-screen h-screen text-white bg-black page font-body">
+      <main className="relative flex flex-col items-center w-screen h-screen text-white bg-black page font-body bg-[url('./bg.png')] bg-center bg-cover bg-fixed ">
         <Levels />
         <Info />
       </main>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Home from "./home";
 import ScoreCard from "./scoreCard";
 import Level1 from "./level1";
@@ -10,6 +10,21 @@ function Levels() {
   const [best1Score, setBest1Score] = useState(0);
   const [best2Score, setBest2Score] = useState(0);
   const [best3Score, setBest3Score] = useState(0);
+
+  const handleKeyPress = useCallback(
+    (event) => {
+      if (event.key == "Escape" && level != 0) setLevel(0);
+    },
+    [level]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [handleKeyPress]);
+
   if (level == 0)
     return (
       <Home

@@ -98,13 +98,13 @@ export default function Home({ setLevel, best1Score, best2Score, best3Score }) {
   return (
     <>
       <div>
-        <div className="flex flex-col items-center justify-center gap-4 text-5xl select-none font-display py-36">
+        <div className="flex flex-col items-center justify-center gap-4 text-6xl select-none font-display py-36">
           <h1>Anime</h1>
           <h1>Memory</h1>
           <h1>Game</h1>
         </div>
       </div>
-      <div className="flex items-start justify-center gap-10 py-40 btnContainer">
+      <div className="flex items-start justify-center gap-10 py-32 btnContainer">
         <LvlBtnSelector level={1} setLevel={setLevel} bestScore={best1Score} />
         <LvlBtnSelector level={2} setLevel={setLevel} bestScore={best2Score} />
         <LvlBtnSelector level={3} setLevel={setLevel} bestScore={best3Score} />

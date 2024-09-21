@@ -2,7 +2,7 @@ export default function ScoreCard({ level, currScore, bestScore }) {
   return (
     <>
       <div
-        className={`p-3 border-2 rounded-2xl shadow-lg
+        className={`p-3 border-2 rounded-2xl shadow-lg backdrop-blur-sm
         ${level == 1 && "border-easy shadow-easy"} 
         ${level == 2 && "border-med shadow-med"} 
         ${level == 3 && "border-hard shadow-hard"} `}
