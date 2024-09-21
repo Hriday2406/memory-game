@@ -2,10 +2,20 @@ import { useState } from "react";
 import { Header } from "./levels";
 import { LVL1ANIME } from "../utils/constants";
 import { shuffleArr } from "../utils/utils";
+import { message, ConfigProvider } from "antd";
 
 export default function Level1({ setLevel, bestScore, setBestScore }) {
   const [currScore, setCurrScore] = useState(0);
   const [arr, setArr] = useState(LVL1ANIME);
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const warningMsg = () => {
+    messageApi.open({
+      type: "error",
+      content: "You clicked on the same card twice! Try Again",
+      duration: 5,
+    });
+  };
 
   const easyCards = arr.map((anime, index) => {
     return (
@@ -15,6 +25,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
         onClick={() => {
           const tempArr = [...arr];
           if (anime.clicked) {
+            warningMsg();
             setCurrScore(0);
             tempArr.forEach((item) => (item.clicked = false));
           } else {
@@ -42,6 +53,21 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
 
   return (
     <>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorText: "#fff",
+            fontSize: 18,
+          },
+          components: {
+            Message: {
+              contentBg: "#111",
+            },
+          },
+        }}
+      >
+        {contextHolder}
+      </ConfigProvider>
       <Header
         level={1}
         setLevel={setLevel}

@@ -3,11 +3,21 @@ import { Header } from "./levels";
 import { LVL2ANIME } from "../utils/constants";
 import { shuffleArr } from "../utils/utils";
 import Card from "./card";
+import { message, ConfigProvider } from "antd";
 
 export default function Level2({ setLevel, bestScore, setBestScore }) {
   LVL2ANIME.splice(0, LVL2ANIME.length, ...shuffleArr(LVL2ANIME));
   const [currScore, setCurrScore] = useState(0);
   const [arr, setArr] = useState(LVL2ANIME);
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const warningMsg = () => {
+    messageApi.open({
+      type: "error",
+      content: "You clicked on the same card twice! Try Again",
+      duration: 5,
+    });
+  };
 
   const medCards = arr.map((anime, index) => {
     return (
@@ -18,6 +28,7 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
         onClick={() => {
           const tempArr = [...arr];
           if (anime.clicked) {
+            warningMsg();
             setCurrScore(0);
             tempArr.forEach((item) => (item.clicked = false));
           } else {
@@ -40,6 +51,21 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
 
   return (
     <>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorText: "#fff",
+            fontSize: 18,
+          },
+          components: {
+            Message: {
+              contentBg: "#111",
+            },
+          },
+        }}
+      >
+        {contextHolder}
+      </ConfigProvider>
       <Header
         level={2}
         setLevel={setLevel}
