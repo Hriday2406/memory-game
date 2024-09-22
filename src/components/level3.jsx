@@ -4,12 +4,14 @@ import Card from "./card";
 import { shuffleArr } from "../utils/utils";
 import { Header } from "./levels";
 import { message, ConfigProvider } from "antd";
+import WinModal from "./win";
 
 export default function Level3({ setLevel, bestScore, setBestScore }) {
   LVL3ANIME.splice(0, LVL3ANIME.length, ...shuffleArr(LVL3ANIME));
   const [currScore, setCurrScore] = useState(0);
   const [arr, setArr] = useState(LVL3ANIME);
   const [messageApi, contextHolder] = message.useMessage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const warningMsg = () => {
     messageApi.open({
@@ -36,10 +38,9 @@ export default function Level3({ setLevel, bestScore, setBestScore }) {
             setCurrScore(currScore + 1);
             if (bestScore <= currScore) setBestScore(currScore + 1);
             if (currScore + 1 == 10) {
-              alert("you win");
+              setIsModalOpen(true);
               setCurrScore(0);
               tempArr.forEach((item) => (item.clicked = false));
-              setLevel(0);
             }
           }
           setArr(tempArr);
@@ -73,6 +74,12 @@ export default function Level3({ setLevel, bestScore, setBestScore }) {
         bestScore={bestScore}
       />
       <section className="grid grid-cols-5 gap-10 justify-items-center w-fit">
+        <WinModal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          level={3}
+          setLevel={setLevel}
+        />
         {hardCards}
       </section>
     </>

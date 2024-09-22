@@ -3,11 +3,13 @@ import { Header } from "./levels";
 import { LVL1ANIME } from "../utils/constants";
 import { shuffleArr } from "../utils/utils";
 import { message, ConfigProvider } from "antd";
+import WinModal from "./win";
 
 export default function Level1({ setLevel, bestScore, setBestScore }) {
   const [currScore, setCurrScore] = useState(0);
   const [arr, setArr] = useState(LVL1ANIME);
   const [messageApi, contextHolder] = message.useMessage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const warningMsg = () => {
     messageApi.open({
@@ -33,10 +35,9 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
             setCurrScore(currScore + 1);
             if (bestScore <= currScore) setBestScore(currScore + 1);
             if (currScore + 1 == 6) {
-              alert("you win");
+              setIsModalOpen(true);
               setCurrScore(0);
               tempArr.forEach((item) => (item.clicked = false));
-              setLevel(0);
             }
           }
           setArr(tempArr);
@@ -75,6 +76,12 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
         bestScore={bestScore}
       />
       <section className="container grid grid-cols-3 gap-8 justify-items-center [&>*:nth-child(1)]:justify-self-end [&>*:nth-child(4)]:justify-self-end [&>*:nth-child(3n)]:justify-self-start  ">
+        <WinModal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          level={1}
+          setLevel={setLevel}
+        />
         {easyCards}
       </section>
     </>
