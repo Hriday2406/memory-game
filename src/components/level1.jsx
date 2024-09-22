@@ -6,6 +6,7 @@ import { message, ConfigProvider } from "antd";
 import WinModal from "./win";
 
 export default function Level1({ setLevel, bestScore, setBestScore }) {
+  LVL1ANIME.splice(0, LVL1ANIME.length, ...shuffleArr(LVL1ANIME));
   const [currScore, setCurrScore] = useState(0);
   const [arr, setArr] = useState(LVL1ANIME);
   const [messageApi, contextHolder] = message.useMessage();
@@ -40,8 +41,8 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
               tempArr.forEach((item) => (item.clicked = false));
             }
           }
+          tempArr.splice(0, tempArr.length, ...shuffleArr(tempArr));
           setArr(tempArr);
-          setArr((prev) => shuffleArr(prev));
         }}
       >
         <div className="overflow-hidden transition-all duration-200 select-none rounded-xl group-hover:scale-90">

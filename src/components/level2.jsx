@@ -43,8 +43,8 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
               tempArr.forEach((item) => (item.clicked = false));
             }
           }
+          tempArr.splice(0, tempArr.length, ...shuffleArr(tempArr));
           setArr(tempArr);
-          setArr((prev) => shuffleArr(prev));
         }}
       />
     );
