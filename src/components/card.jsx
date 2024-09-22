@@ -2,7 +2,7 @@ export default function Card({ item, level, onClick }) {
   let isNameVisible = level == 2;
   return (
     <div
-      className={`transition-all duration-200 p-5 border-2 rounded-[32px] flex flex-col items-center gap-5 hover:scale-105 uppercase hover:shadow-lg group backdrop-blur-sm
+      className={`transition-all duration-200 p-5 border-2 rounded-[32px] flex flex-col items-center gap-5 hover:scale-105 uppercase hover:shadow-lg group backdrop-blur-sm active:scale-90
       ${level == 2 && "hover:shadow-med"} 
       ${level == 3 && "hover:shadow-hard"} 
       ${level == 2 && "border-med"} 

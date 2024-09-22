@@ -23,9 +23,20 @@ function App() {
             gifs.forEach((gifItem) => {
               item.url.push(gifItem.images.original.url);
             });
-          } else {
+          } else if (gif.meta.status == 429) {
             console.log(gif.meta.status, gif.meta.msg);
-          }
+            const newResponse = await fetch(
+              `https://api.giphy.com/v1/gifs/search?api_key=SA5LeTVtgRiIdurzTOcS6qePLhr0gIxO&q=${itemName}&limit=25`,
+              { mode: "cors" }
+            );
+            const newGif = await newResponse.json();
+            if (newGif.meta.status == 200) {
+              const newGifs = newGif.data;
+              newGifs.forEach((newGifItem) => {
+                item.url.push(newGifItem.images.original.url);
+              });
+            } else console.log("2nd API", newGif.meta.status, newGif.meta.msg);
+          } else console.log(gif.meta.status, gif.meta.msg);
         } catch (error) {
           throw new Error(error);
         }
