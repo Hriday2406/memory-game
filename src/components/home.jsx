@@ -97,7 +97,7 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
 export default function Home({ setLevel, best1Score, best2Score, best3Score }) {
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4 text-6xl select-none font-display py-36 xl:py-16 ">
+      <div className="flex flex-col items-center justify-center gap-4 text-6xl select-none font-display py-36 xl:py-16 2xl:py-32 ">
         <h1>Anime</h1>
         <h1>Memory</h1>
         <h1>Game</h1>

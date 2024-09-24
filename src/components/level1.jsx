@@ -23,7 +23,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
   const easyCards = arr.map((anime, index) => {
     return (
       <div
-        className="transition-all duration-100 p-4 border-2 border-easy rounded-[32px] flex flex-col items-center gap-3 hover:scale-105 uppercase group hover:shadow-lg hover:shadow-easy backdrop-blur-sm active:scale-90 w-44 sm:w-44 sm:gap-5 lg:w-56 lg:p-5 xl:w-48 "
+        className="transition-all duration-100 p-4 border-2 border-easy rounded-[32px] flex flex-col items-center gap-3 hover:scale-105 uppercase group hover:shadow-lg hover:shadow-easy backdrop-blur-sm active:scale-90 w-44 sm:w-44 sm:gap-5 lg:w-56 lg:p-5 xl:w-48 2xl:w-52 "
         key={`Lvl 1 ${index}`}
         onClick={() => {
           const tempArr = [...arr];
@@ -49,7 +49,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
           <img
             src={anime.src}
             alt={anime.alias}
-            className="h-40 sm:h-44 lg:h-64 xl:h-40"
+            className="h-40 sm:h-44 lg:h-64 xl:h-40 2xl:h-60"
           />
         </div>
         <h2>{anime.name}</h2>
