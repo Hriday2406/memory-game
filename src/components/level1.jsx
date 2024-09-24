@@ -23,7 +23,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
   const easyCards = arr.map((anime, index) => {
     return (
       <div
-        className="transition-all duration-100 p-4 border-2 border-easy rounded-[32px] flex flex-col items-center gap-3 hover:scale-105 uppercase group hover:shadow-lg hover:shadow-easy backdrop-blur-sm active:scale-90 w-44"
+        className="transition-all duration-100 p-4 border-2 border-easy rounded-[32px] flex flex-col items-center gap-3 hover:scale-105 uppercase group hover:shadow-lg hover:shadow-easy backdrop-blur-sm active:scale-90 w-44 sm:w-44 sm:gap-5"
         key={`Lvl 1 ${index}`}
         onClick={() => {
           const tempArr = [...arr];
@@ -46,7 +46,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
         }}
       >
         <div className="overflow-hidden transition-all duration-200 select-none rounded-xl group-hover:scale-90">
-          <img src={anime.src} alt={anime.alias} className="h-40 " />
+          <img src={anime.src} alt={anime.alias} className="h-40 sm:h-44" />
         </div>
         <h2>{anime.name}</h2>
       </div>
@@ -76,7 +76,7 @@ export default function Level1({ setLevel, bestScore, setBestScore }) {
         currScore={currScore}
         bestScore={bestScore}
       />
-      <section className="container grid grid-cols-2 gap-4 justify-items-center [&>*:nth-child(odd)]:justify-self-end [&>*:nth-child(even)]:justify-self-start sm:grid-cols-2 sm:[&>*:nth-child(n)]:justify-self-center  ">
+      <section className="container grid grid-cols-2 gap-4 justify-items-center [&>*:nth-child(odd)]:justify-self-end [&>*:nth-child(even)]:justify-self-start sm:grid-cols-2 sm:gap-10 ">
         <WinModal
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}

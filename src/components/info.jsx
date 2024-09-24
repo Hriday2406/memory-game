@@ -5,7 +5,7 @@ export default function Info() {
   const [visible, setVisible] = useState(true);
   return (
     <>
-      <div className="absolute flex flex-col text-xs info bottom-2 right-2">
+      <div className="absolute flex flex-col text-xs info bottom-2 right-2 sm:bottom-10 sm:right-10">
         <div
           className={`infoContainer flex flex-col gap-2 -translate-x-12 select-none transition-all duration-500 ${
             visible && "opacity-0 hidden"

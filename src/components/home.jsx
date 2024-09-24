@@ -104,7 +104,7 @@ export default function Home({ setLevel, best1Score, best2Score, best3Score }) {
           <h1>Game</h1>
         </div>
       </div>
-      <div className="flex items-start justify-center gap-3 py-32 btnContainer">
+      <div className="flex items-start justify-center gap-3 py-32 btnContainer sm:gap-8">
         <LvlBtnSelector level={1} setLevel={setLevel} bestScore={best1Score} />
         <LvlBtnSelector level={2} setLevel={setLevel} bestScore={best2Score} />
         <LvlBtnSelector level={3} setLevel={setLevel} bestScore={best3Score} />
