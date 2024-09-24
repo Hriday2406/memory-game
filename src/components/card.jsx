@@ -9,11 +9,11 @@ export default function Card({ item, level, onClick }) {
       ${level == 3 && "border-hard"} `}
       onClick={onClick}
     >
-      <div className="w-40 overflow-hidden transition-all duration-200 select-none rounded-xl group-hover:scale-90 ">
+      <div className="w-40 overflow-hidden transition-all duration-200 select-none rounded-xl group-hover:scale-90 lg:w-44 ">
         <img
           src={item.url[Math.floor(Math.random() * 25)]}
           alt={item.alias}
-          className="h-24 sm:h-28"
+          className="h-24 sm:h-28 lg:h-40"
         />
       </div>
       <h2 className={`${!isNameVisible && "hidden"}`}>{item.name}</h2>

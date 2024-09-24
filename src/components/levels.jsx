@@ -64,7 +64,7 @@ function Header({ level, setLevel, currScore, bestScore }) {
   return (
     <div className="flex items-center justify-around w-screen">
       <div
-        className="text-3xl cursor-pointer select-none my-14 font-display"
+        className="text-3xl cursor-pointer select-none my-14 font-display lg:my-16"
         onClick={() => {
           setLevel(0);
         }}

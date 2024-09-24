@@ -73,7 +73,7 @@ export default function Level2({ setLevel, bestScore, setBestScore }) {
         currScore={currScore}
         bestScore={bestScore}
       />
-      <section className="container grid grid-cols-2 gap-6 justify-items-center w-fit [&>*:nth-child(odd)]:justify-self-end [&>*:nth-child(even)]:justify-self-start">
+      <section className="container grid grid-cols-2 gap-6 justify-items-center w-fit [&>*:nth-child(odd)]:justify-self-end [&>*:nth-child(even)]:justify-self-start lg:grid-cols-3 lg:gap-8 lg:[&>*:last-child]:col-start-3 lg:[&>*:nth-child(5)]:col-start-3  ">
         <WinModal
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
