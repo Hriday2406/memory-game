@@ -73,7 +73,7 @@ export default function Level3({ setLevel, bestScore, setBestScore }) {
         currScore={currScore}
         bestScore={bestScore}
       />
-      <section className="grid grid-cols-5 gap-10 justify-items-center w-fit">
+      <section className="grid grid-cols-2 gap-6 justify-items-center w-fit">
         <WinModal
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
