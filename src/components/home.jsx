@@ -70,7 +70,7 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
         }}
       >
         <Button
-          className={`p-6 border-2 shadow-lg btn font-body justify-self-start 
+          className={`p-5 border-2 shadow-lg btn font-body justify-self-start 
           ${level == 1 && bestScore == 6 && "shadow-easy hover:shadow-white"} 
           ${level == 2 && bestScore == 8 && "shadow-med hover:shadow-white"} 
           ${level == 3 && bestScore == 10 && "shadow-hard hover:shadow-white"}`}
@@ -97,14 +97,12 @@ function LvlBtnSelector({ level, setLevel, bestScore }) {
 export default function Home({ setLevel, best1Score, best2Score, best3Score }) {
   return (
     <>
-      <div>
-        <div className="flex flex-col items-center justify-center gap-4 text-6xl select-none font-display py-36">
-          <h1>Anime</h1>
-          <h1>Memory</h1>
-          <h1>Game</h1>
-        </div>
+      <div className="flex flex-col items-center justify-center gap-4 text-6xl select-none font-display py-36 xl:py-16 2xl:py-32 ">
+        <h1>Anime</h1>
+        <h1>Memory</h1>
+        <h1>Game</h1>
       </div>
-      <div className="flex items-start justify-center gap-10 py-32 btnContainer">
+      <div className="flex items-start justify-center gap-3 py-32 btnContainer sm:gap-8">
         <LvlBtnSelector level={1} setLevel={setLevel} bestScore={best1Score} />
         <LvlBtnSelector level={2} setLevel={setLevel} bestScore={best2Score} />
         <LvlBtnSelector level={3} setLevel={setLevel} bestScore={best3Score} />

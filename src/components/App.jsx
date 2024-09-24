@@ -54,7 +54,7 @@ function App() {
   }, []);
   return (
     <>
-      <main className="relative flex flex-col items-center w-screen h-screen text-white bg-black page font-body bg-[url('https://res.cloudinary.com/dbpe1wf5i/image/upload/v1727198077/bg_mj9l3a.png')] bg-center bg-cover bg-fixed ">
+      <main className="relative flex flex-col items-center w-screen min-h-screen text-white bg-black page font-body bg-[url('https://res.cloudinary.com/dbpe1wf5i/image/upload/v1727198077/bg_mj9l3a.png')] bg-center bg-cover bg-fixed ">
         <Levels />
         <Info />
       </main>

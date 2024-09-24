@@ -68,7 +68,12 @@ export default function WinModal({
                 },
               }}
             >
-              <Button className="mt-6 mr-6" onClick={handleOk} size="large">
+              <Button
+                className="mt-6 mr-6"
+                onClick={handleOk}
+                size="large"
+                key="continueBtn"
+              >
                 Continue
               </Button>
             </ConfigProvider>,
@@ -90,7 +95,12 @@ export default function WinModal({
                 },
               }}
             >
-              <Button className="" onClick={handleCancel} size="large">
+              <Button
+                className=""
+                onClick={handleCancel}
+                size="large"
+                key="tryAgainBtn"
+              >
                 Try Again
               </Button>
             </ConfigProvider>,
